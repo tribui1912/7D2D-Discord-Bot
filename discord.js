@@ -8,6 +8,7 @@ const config = {
     channelId: process.env.DISCORD_CHANNEL_ID,
     serverHost: process.env.SERVER_HOST || '127.0.0.1',
     serverPort: parseInt(process.env.SERVER_PORT) || 26900,
+    displayHost: process.env.DISPLAY_SERVER_HOST || process.env.SERVER_HOST || '127.0.0.1',
     checkInterval: parseInt(process.env.CHECK_INTERVAL) || 60000,
     timeout: parseInt(process.env.TIMEOUT) || 5000
 };
@@ -84,7 +85,7 @@ class ServerMonitor {
             .setTitle('🎮 7 Days to Die Server Status')
             .setColor(isOnline ? 0x00ff00 : 0xff0000)
             .addFields([
-                { name: 'Server', value: `${config.serverHost}:${config.serverPort}`, inline: true },
+                { name: 'Server', value: `${config.displayHost}:${config.serverPort}`, inline: true },
                 { name: 'Status', value: isOnline ? '🟢 Online' : '🔴 Offline', inline: true },
                 { name: 'Last Check', value: new Date().toLocaleString(), inline: true }
             ])

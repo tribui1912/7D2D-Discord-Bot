@@ -51,6 +51,10 @@ DISCORD_CHANNEL_ID=your_actual_channel_id_here
 SERVER_HOST=127.0.0.1
 SERVER_PORT=26900
 
+# Display server address (optional - shows in Discord messages)
+# Leave empty to use SERVER_HOST, or set to your public IP/domain
+DISPLAY_SERVER_HOST=your.public.ip.address
+
 # Bot settings
 CHECK_INTERVAL=60000
 TIMEOUT=5000
@@ -91,10 +95,11 @@ npm run dev
 |---------------------|-------------|---------|----------|
 | `DISCORD_BOT_TOKEN` | Discord bot token | - | ✅ Yes |
 | `DISCORD_CHANNEL_ID` | Target Discord channel ID | - | ✅ Yes |
-| `SERVER_HOST` | 7DTD server IP address | 127.0.0.1 | ✅ Yes |
-| `SERVER_PORT` | 7DTD server port | 26900 | ✅ Yes |
-| `CHECK_INTERVAL` | How often to check server status (ms) | 60000 | ✅ Yes |
-| `TIMEOUT` | Connection timeout (ms) | 5000 | ✅ Yes |
+| `SERVER_HOST` | 7DTD server IP address for monitoring | 127.0.0.1 | No |
+| `SERVER_PORT` | 7DTD server port | 26900 | No |
+| `DISPLAY_SERVER_HOST` | Server address shown in Discord messages | SERVER_HOST value | No |
+| `CHECK_INTERVAL` | How often to check server status (ms) | 60000 | No |
+| `TIMEOUT` | Connection timeout (ms) | 5000 | No |
 
 ## Commands
 
@@ -103,6 +108,23 @@ npm run dev
 ## How It Works
 
 The bot continuously monitors your 7 Days to Die server by attempting to establish a TCP connection to the specified host and port. When the connection status changes (online/offline), it sends a notification to the specified Discord channel.
+
+### Display vs Monitoring IP
+
+The bot uses two different IP addresses:
+- **`SERVER_HOST`**: The IP address used for actual server monitoring (can be internal/local IP)
+- **`DISPLAY_SERVER_HOST`**: The IP address/domain shown in Discord messages (can be public IP/domain)
+
+This is useful when:
+- Your server is behind a router/firewall
+- You want to show a public domain instead of internal IP
+- You're using port forwarding and want to display the external address
+
+**Example:**
+```env
+SERVER_HOST=192.168.1.100        # Internal IP for monitoring
+DISPLAY_SERVER_HOST=play.myserver.com  # Public domain for players
+```
 
 ## Features
 
