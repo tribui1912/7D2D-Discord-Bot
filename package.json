@@ -1,0 +1,29 @@
+{
+  "name": "7d2d-discord-bot",
+  "version": "1.0.0",
+  "description": "Discord bot for monitoring 7 Days to Die server status",
+  "main": "discord.js",
+  "scripts": {
+    "start": "node discord.js",
+    "dev": "nodemon discord.js"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "7-days-to-die",
+    "server-monitor",
+    "gaming"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "discord.js": "^14.14.1",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
