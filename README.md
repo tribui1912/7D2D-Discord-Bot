@@ -22,7 +22,7 @@ A Discord bot that monitors the status of your 7 Days to Die server and sends no
 ### 1. Clone the repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/tribui1912/7D2D-Discord-Bot.git
 cd 7d2d-discord-bot
 ```
 
