@@ -91,10 +91,10 @@ npm run dev
 |---------------------|-------------|---------|----------|
 | `DISCORD_BOT_TOKEN` | Discord bot token | - | ✅ Yes |
 | `DISCORD_CHANNEL_ID` | Target Discord channel ID | - | ✅ Yes |
-| `SERVER_HOST` | 7DTD server IP address | 127.0.0.1 | No |
-| `SERVER_PORT` | 7DTD server port | 26900 | No |
-| `CHECK_INTERVAL` | How often to check server status (ms) | 60000 | No |
-| `TIMEOUT` | Connection timeout (ms) | 5000 | No |
+| `SERVER_HOST` | 7DTD server IP address | 127.0.0.1 | ✅ Yes |
+| `SERVER_PORT` | 7DTD server port | 26900 | ✅ Yes |
+| `CHECK_INTERVAL` | How often to check server status (ms) | 60000 | ✅ Yes |
+| `TIMEOUT` | Connection timeout (ms) | 5000 | ✅ Yes |
 
 ## Commands
 
